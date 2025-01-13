@@ -1,0 +1,131 @@
+/******************************************************************************
+* HOMEWORK 2: LinkedLists
+* CS15 Spring 2024 
+* README
+* Author: Andrew Rozenblit arozen01
+******************************************************************************/
+
+Program Purpose:
+---------------
+
+   The program creates a useable Character LinkedList. 
+
+Compile/run:
+-----------
+
+    Compile and Run using the command "unit_test"
+
+
+Acknowledgments:
+---------------
+
+    Had help from course staff through Piazza
+
+Files:
+-----
+
+CharLinkedList.h: Interface for a simple Character LinkedList Class.
+
+CharLinkedList.cpp: Implementation of a simple Character LinkedList Class.
+    The default constructor for this class initializes an LinkedList to a size 
+    of 0, and a capacity of 0. 
+
+unit_tests.h: A unit testing file for the CharLinkedList Class. 
+    Runs in conjunction with the unit_test framework to allow for testing of 
+    individual functions.
+
+Makefile: File to build the program.
+
+
+Data Structures:
+---------------
+
+    This main data structure of this lab is an LinkedList, which is are nodes
+    of elements that point to each other. Each Node stores the letter and 
+    points to both the next Node in the list and the previous Node in the list.
+    An advantage that this data structure provides is that the insertion and 
+    removal of elements is relatively simple as it the other elements don't 
+    need to be shifted. A disadvantage is that it takes longer to find the 
+    element you're looking for because you must travserse the list until you 
+    find what you're looking for.
+    
+    An interesting algorithm was the recursiveNodeAt function as it 
+    recursively travsersed the entirety, each time subtrating 1 from the index  
+    passed through until the index was 0 and the element was found. The 
+    recurseReverse function was also interesting as it forced me to consider 
+    how to add all the elements to a string in reverse order.
+
+
+Testing:
+-------
+
+    I created some functions in the unit_tests.h class that tested attributes
+    of my LinkedList functions to make sure they were working properly. These
+    attributes included whether each function fufills its purpose and whether
+    a function returns the proper error message given invalid input.
+
+
+Time Spent:
+-----------
+    I spent about 8 hours on the homework.
+
+Questions
+---------
+    1. 
+        a. Insertion 
+            Fastest: pushAtBack 100 times -- 5303
+            Middle: pushAtFront middle of list 100 times -- 16305
+            Slowest: insertAt 100 times  -- 11216381
+        b. Removal 
+            Fastest: popFromBack 100 times -- 2067
+            Middle: popFromFront middle of list 100 times -- 2229
+            Slowest: removeAt 100 times -- 5527029
+        c. Access
+            Fastest: call first() 100 times -- 412
+            Middle: call last() 100 times -- 463
+            Slowest: call elementAt() 100 times -- 5648135
+
+    2.  The front and back operations were always faster than the middle 
+        operations because the front and back were easy to access through the 
+        private instance pointers, while in order to acesss the middle, I had 
+        to traverse the entire array to find it. 
+    
+    3.  ArrayLists had faster insertion and removal in both inserting in the  
+        middle and back, but LinkedList had faster insertion and removal to the
+        front. The back is faster for ArrayLists because only a letter needs to
+        be added or removed, while for LinkedLists a letter needs to be added 
+        or removed and the pointers need to be adjusted. The Middle is faster 
+        for LinkedLists becasue accessing the middle only requires an index 
+        while for LinkedLists the entie list needs to be traversed to find the 
+        middle index. The front insertion is faster for LinkedLists because 
+        they don't need to shift down all the elements like ArrayLists. 
+        LinkedLists accessed the first and last elements of the list slightly 
+        faster than ArrayLists, but both do the same operation of using a 
+        pointer to find these elements. However ArrayLists were much faster at 
+        accessing the middle elements because they just used a pointer to 
+        access while LinkedLists needed to traverse the list to find the 
+        correct Node. 
+
+
+
+    Q1: I think popFromFront and removeAt were easier with a LinkedList 
+        because you didn't need to shift down the elements after the deletion
+        with a LinkedList. 
+        
+    Q2: I think toString and toReverseString were easier to implement using an
+        ArrayList because I didn't need to do so recusrively. I aslo think
+        elementAt was a lot easier to access with an ArrayList because you 
+        didn't need to traverse an entire list to find the element. And I think 
+        the clear function was easier to implement with an ArrayList because 
+        you didn't need to actually delete all the elements like in a 
+        LinkedList. 
+    
+    Q3: The client would need to create a struct in there .h file and go 
+        through the ArrayList creating nodes for each element and linking the 
+        elements together. They would also need to rewrite how they wrote 
+        toString, toReverseString, elementAt, inserAt, popFrontFront, removeAt, 
+        and some other functions slightly. 
+
+
+
+

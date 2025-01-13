@@ -1,0 +1,38 @@
+% tests the exec function
+
+% Normal exec
+{ 1 3 + }
+exec 
+print 
+print
+
+% rpn string spanning over a couple of lines
+{ 12 
+3 
+*
+}
+exec
+print 
+print 
+
+% complex rpn string 
+{ 1 { 4 2 / } / }
+exec
+print 
+print 
+
+% not proper rpnString asked to exec 
+clear
+{ add.cylc }
+exec 
+print 
+
+% not an rpn string at the top 
+clear
+#t
+print
+
+% empty stack
+exec
+
+quit

@@ -1,0 +1,57 @@
+Passengers on the train: {}
+TRAIN: [0] Heath St {}
+       [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1]}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1][2, 0->2]}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1][2, 0->2]}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {[3, 2->0]}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1][2, 0->2]}
+TRAIN: [1] Back of the Hill {[4, 1->2]}
+       [2] Riverway {[3, 2->0]}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1][2, 0->2]}
+TRAIN: [1] Back of the Hill {[4, 1->2][5, 1->1]}
+       [2] Riverway {[3, 2->0]}
+Command? Passengers on the train: {[5, 1->1]}
+       [0] Heath St {[1, 0->1][2, 0->2]}
+       [1] Back of the Hill {}
+TRAIN: [2] Riverway {[3, 2->0]}
+Command? Passengers on the train: {[5, 1->1]}
+TRAIN: [0] Heath St {[1, 0->1][2, 0->2]}
+       [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {[2, 0->2]}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+       [1] Back of the Hill {}
+TRAIN: [2] Riverway {}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {}
+       [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+       [2] Riverway {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+       [1] Back of the Hill {}
+TRAIN: [2] Riverway {}
+Command? Thanks for playing MetroSim. Have a nice day!

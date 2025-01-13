@@ -1,0 +1,147 @@
+/**********************************************************
+* Project 3: Zap
+* CS 15
+* README
+*  Author: Andrew Rozenblit arozen01
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make zap
+     - run by 
+            ./zap [zap | unzap] inputFile outputFile
+
+
+Program Purpose: To either compress some inputted text into a binary bit string 
+*               using the Huffman Coding process or decompress a binary bit
+*               string into its original text form. 
+
+
+Acknowledgements: Nadia helped me with some errors and autograder not working. 
+
+Files: 
+main.cpp:
+    Main file simple driver function that calls either the encode or decode
+    functions depending on the users run command.
+
+HuffmanCoder.cpp:
+    Implementation of HuffmanCoder class. Main functionality is to process take
+    the inputted text and either build a tree and use it to encode the text, or
+    take the inputted string to decode it and turn it into its original text.
+HuffmanCoder.h 
+    Interfance of the HuffmanCoder.cpp file. Shows the user all the availble 
+    functions to call and the public varibales. The code takes in an inputed 
+    text and either encodes it into a binary string using the Huffman Coding 
+    method or decodes an input binary string using the Huffman Coding method. 
+HuffmanTreeNode.h 
+BinaryIO.h 
+Makefile
+    compiles the code.
+README
+
+TESTING FILES
+unit_tests.h 
+hi.txt
+banana.txt
+works_of_shakespeare.txt
+all_conll_english.txt
+banana_apple.txt
+ecoli.coli
+empty.file
+sentences.txt
+singleLetter.txt
+
+Note:  the program should handle all cases.
+
+F. 
+Data Structures:
+
+I used various different data structures in this project.
+
+1. Struct: I firstly used a struct entitled Count in order to store the 
+frequencry of each character. I wanted to store three pieces of data the letter
+its frequency and its encoding all together in a singular place. 
+Thus I used a struct with each  struct storing a char variable, int variable, 
+and a string. This was the correct choice because it allowed me to tie this 
+data together and have my code consider it as one item holding three things. 
+I could use Structs whenever I need to hold multiple pieces of data in one 
+holder. An example of a different situation when I could use it would be if I 
+were coding a database system for a vet storing all their patients. Each struct
+would represent a patient and hold a string for the name, an int for the age, 
+another string for the type of animal, and another string storing the patient's
+history. A second example could be a school database system. The struct could 
+hold the student's name in a string, their ID number in an int, and their major
+ in a string.  
+
+2. Vector: In order to store all the Structs I created for every unique 
+character, I used a vector. This is because I did not know how many unique
+characters there were, so I needed a data structure that could change size, and
+I wanted to be able to access any element easily. I also used that same vector
+to store all the letters and their coressponding encodings. I first cleared it
+and then loaded it with the Count struct storing each character and encoding.
+Another example of when to use a vector would be a program that needs to store 
+all the station objects of a metro system simulator and the amount of stations 
+is not specified and the user needs easy access to each station. A second 
+example would be an application that needs to store all exam scores in one 
+place and there is an unknown amount of grades and needs to be easy access to 
+each grade. 
+
+3. Tree: Finally, I used a tree for both the encoding and decoidng processes. 
+As part of the Huffman Coding process, it is necesary to build a tree with the
+more frequent characters closer to the root, and the less frequent farther. It 
+was the right choice for this project because it allows to decode faster 
+because only a part of the data strucutre is needed to sift through to find the
+value thus decoding process has a complexity of O(logn) and for the encoding 
+process it made sense because it allowed to decrease the amount of bits needed
+to encode some of the characters. Two other times a tree would be useful would 
+be firstly if I needed to organize exam scores in ascending order and be able
+to find the one I need quickly than I can use a BST and find it in O(logn) 
+time. Secondly, an example would be when coding a family tree, then a tree
+would should whose child is whose well. 
+
+Algorithm Overview:
+
+An interesting algorithm was the code that I wrote for the char_codes() 
+function. Here I created the table of every letter and their corresponding 
+encoding recursively. I thought this algorithm was cool because it really
+showed off the benefit of using a Huffman Tree to encode data because you 
+simply assign the node of the left to 0 and the node on the right to 1, and
+you keep doing that until everything has a matching encoding. By the same 
+reasoning, I also enjoined the opposite function in the decoder section, which
+would decode bit string into a letter. I found it so simple to just go down the
+tree based on the current digit (whether 0 or 1) as opposed to just coding 
+every letter into itd 8-bit binary string. I also really liked the use of get
+here as it allowed to me to just move down the stream no matter which function
+or iteration of the recursion I was in. 
+
+G. Testing:
+
+phaseOne.cpp/phaseOne.h:
+For phase one of the project I tested using unit_test. For each of the three
+functions I created, I had multiple tests that would test the basic cases
+and various edge cases. This allowed me to see very easily when my code 
+wasn't working for a specific input because all the tests were independent of 
+each other. For count_freqs() I first tested the function would work for a 
+basic singular word input. Then I tested it against large input, an input with
+only the same letter, and an empty inpit. Then for searilize and deserialize
+I tested on the tree produced by ZapUtil. I first serialized it and made sure 
+it corresponded to the version in the text and then deserialized it.
+
+HuffmanCoder.cpp/HuffmanCoder.h:
+For phase 2 of the project, I tested using diff testing. Firstly, I tested 
+the encoder function. I used the provided banana.txt file as a simple file to 
+provide to the code as it had all different letters. I compared the amount of
+bits it compressed to, to the amount of bits the_zap compressed it to. Then I 
+tested using sentences.txt, ecoli.coli, allA.txt, hi.txt, apple_banana. Next 
+for stress tests I used all_conll_english.txt and works_of_shakespeare.txt. 
+After all these files ran, I compared the amount of bits to the amount of bits 
+that the demo compressed it to. Finally I made some on my own tests such as 
+empty.file and singleLetter.txt to test more edge cases such as if the file was
+empty or had only one letter. Lastly, I gave the code invalid commands like an 
+input name that did not exist or more that 4 things in my run command to see if
+my code gave the same error message as the demo.  
+
+H.
+
+Time Spent: I spent 7 hours. 

@@ -1,0 +1,127 @@
+/**********************************************************
+* Project 1: Metro Simulator
+* CS 15
+* README
+*  Author: Andrew Rozenblit arozen01
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make MetroSim
+     - run executable with
+            ./MetroSim stationsFile passFile [commands]
+
+
+Program Purpose: Simulate the process of a train in a metro system. 
+Simulation can process passengers being added and taken off the train.
+
+
+Acknowledgements: Caroline for helping me during the Design Check Off. Austin 
+and John for helping me with a linker error. Darya helped me with how to get
+my code to stop when the last command is not "m f". 
+
+
+Files: 
+
+main.cpp:
+     Main file simple driver function that run the MetroSim simulator.
+
+MetroSim.cpp:
+     Implementation of MetroSim class. Main functionality of running the Metro Simulation, moves trains and deal with passengers going on/off the train.
+
+MetroSim.h:
+     Interface of MetroSim class.
+
+stations.txt:
+     an example file containing a list of stations.
+
+test_commands.txt:
+     sample list of commands that you could give to the simulator
+
+the_metroSim:
+     reference implementation for students to see how
+
+stations1.txt stations2.txt
+     station lists of different lengths to test code
+
+commands1.txt commands2.txt 
+     input commands to test the program. 
+
+
+
+Note:  the program should handle all cases.
+
+Data Structures:
+
+I used various different data structures in this project.
+
+First I used a list in order to create my PassenegerQueue class. The 
+PassengerQueue classes uses the built in c++ std::list in order to create a 
+queue where Passenegers are stored and only the front passenger can be 
+accessed, the front passenger maybe removed, and a new passenger maybe added to
+the back. I used a list here because the complexity of removing an element from 
+the front is O(1) for lists and O(n) for vectors so I opted to use the one with
+a smaller complexity. Another situation where to use a queue would be in CS 
+office hours since only the front needs to be accessed and removed and all 
+new students need to be added to the back. A third situation would be in a 
+kitchen of dishes to make since only the front needs to be accessed to know 
+the next item to make, only the front needs to be removed when item is made, 
+and new items need to be added to the back.
+
+The second data structure I used was c++'s built in ArrayList: std::vector.
+I used this data structure in order to store all Stations and to do this I 
+used a struct called Stations. So my vector was filled with type Station. The 
+Struct held the station id, name, and two passenegerQueues. The first 
+PassengerQueue stored all passenger who are going to board the train at this 
+station and my second PassenegerQueue stored all passengers on the train who
+are going to get off it at that station. I used a vector here because the 
+complexity of accessing an element is O(1) for vectors and O(n) for lists
+so I opted to use the one with a smaller complexity. A vector would be useful 
+for the other situations where an expandable and array ius 
+
+
+Testing:
+
+Passenger and PassengerQueue
+
+For phase 1 I used unit tests to test my PassenegerQueue and Passenger classes. 
+I first confirmed that I would be able to create instances of both the classes. 
+Then I confirmed that the enqueue() function in the PassenegerQueue works by 
+attempting to add a passeneger to the back of the queue. Then, I confirmed that
+the front function works. I did this by enqueueuing a couple passengers to the 
+queue and then called front() and made sure that the Passenger had the correct 
+id number, to station, and from station. Then I tested print(), by enqueuing a 
+passenger and confirming that print() returns that passenger's information in 
+the correct format. Finally, I tested dequeue() by enqueueing a couple 
+passengers, callind dequeue(), and then calling print to see if the first 
+passeneger was printed. In this part, I was confused at first how to check 
+print since I had to create an output stream to pass into the print() function.
+
+MetroSim
+
+For phase 2, I used the_MetroSim demo and diff checked it with my own program
+to test it. I first created a couple different station files with a different
+number of station files. Station1.txt has 2 stations and Station2.txt has three
+stations. I also used the provided stations file. For each new station file I 
+created I also created a commands file: commands1.txt and command2.txt which 
+would test stations1.txt and stations2.txt respectively. Within these files I
+tested if my demo was able to wrap around to the 0th station after the last,
+if a passenger who got on at a station and wanted to get off at that same 
+station did a full cycle on train before getting off, if the program worked the
+same on both standard input and command file input, and if the program would 
+stop even when "m f" was not the last command in the commands file. I tested 
+all of these by created files with the standard output of both the demo and 
+my code with the same commands and then diffed to see if there were any 
+differences. I did this for all the testing files I created. Finally, I would
+try to run invalid commmands on my program and the demo to make sure the error
+messages were exactly the same between then two. A bug I ran into was my sim's
+while loop wouldn't end when "m f" wasn't in the command file, even though
+one of my while loop conditions were "not instream.eof()". 
+
+Part that you found most difficult: I found the testing the part to be the 
+most difficult, because it was difficult for me to isolate certain features of 
+my program to test and to think of different edge cases and situation to test  
+my code against. 
+
+Time Spent: I spent 8 hours. 

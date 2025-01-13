@@ -1,0 +1,11 @@
+%%%
+%%% Small Tasks Testing
+%%%
+%%% Preforms Small Tasks on the Calculator
+%%%
+%%% 
+%%%
+
+#t                  % pushes 5 onto the stack
+print               % prints the top element 
+quit                % quits

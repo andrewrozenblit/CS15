@@ -1,0 +1,8 @@
+Passengers on the train: {}
+TRAIN: [0] p 0 34  {}
+       [1] p 1 34 {}
+       [2] p 2 63  {}
+       [3] m m {}
+       [4] m m {}
+       [5] m m {}
+Command? Thanks for playing MetroSim. Have a nice day!

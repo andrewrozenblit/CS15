@@ -1,0 +1,14 @@
+Passenger 4 left train at station Riverway
+Passenger 10 left train at station Symphony
+Passenger 7 left train at station Incandescent
+Passenger 14 left train at station Serenade
+Passenger 3 left train at station Heath St
+Passenger 9 left train at station Heath St
+Passenger 15 left train at station Heath St
+Passenger 5 left train at station Back of the Hill
+Passenger 1 left train at station Back of the Hill
+Passenger 6 left train at station Back of the Hill
+Passenger 2 left train at station Riverway
+Passenger 11 left train at station Fenwood Rd
+Passenger 12 left train at station Symphony
+Passenger 13 left train at station Nebula

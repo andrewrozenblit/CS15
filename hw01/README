@@ -1,0 +1,96 @@
+/******************************************************************************
+* HOMEWORK 1: ArrayLists
+* CS15 Spring 2024 
+* README
+* Author: Andrew Rozenblit arozen01
+******************************************************************************/
+
+Program Purpose:
+---------------
+
+   The program creates a useable Character ArrayList. 
+
+Compile/run:
+-----------
+
+    Compile and Run using the command "unit_test"
+
+
+Acknowledgments:
+---------------
+
+    Had help from course staff through Piazza
+
+Files:
+-----
+
+CharArrayList.h: Interface for a simple Character ArrayList Class.
+
+CharArrayList.cpp: Implementation of a simple Character ArrayList Class.
+    The default constructor for this class initializes an ArrayList to a size 
+    of 0, and a capacity of 0. 
+
+unit_tests.h: A unit testing file for the CharArrayList Class. 
+    Runs in conjunction with the unit_test framework to allow for testing of 
+    individual functions.
+
+Makefile: File to build the program.
+
+
+Data Structures:
+---------------
+
+    This main data structure of this lab is an ArrayList, which is a 
+    expanding array. If the number of items is ever equal to the capacity, the
+    array will automatically expand, allowing for an arbitrary number of 
+    elements to be inserted into the ArrayList. An advantage that this data 
+    structure gave was that it allows for elements to be easily added and 
+    removed. An interesting algorithm was the expand function as it had to 
+    dynamically create a new array and transfer the elements and then free 
+    the memory reserved before. Also the operator overload was interesting 
+    as it reprogrammed the equals sign to make deep copies when two instances
+    are set equal to one another rather than the normal shallow copies it 
+    makes.
+
+
+Testing:
+-------
+
+    I created some functions in the unit_tests.h class that tested attributes
+    of my ArrayList functions to make sure they were working properly. These
+    attributes included whether each function fufills its purpose and whether
+    a function returns the proper error message given invalid input
+
+
+Time Spent:
+-----------
+    I spent about 5 hours on the homework.
+
+Questions
+---------
+    1. 
+        a. Insertion 
+            Fastest: pushAtBack 100 times -- 890
+            Middle: insertAt middle of list 100 times -- 1464622
+            Slowest: pushAtFront 100 times  -- 2944173
+        b. Removal 
+            Fastest: popFromBack 100 times -- 644
+            Middle: removeAt middle of list 100 times -- 1671564
+            Slowest: popFromFront 100 times -- 3365402
+        c. Access
+            Fastest: call elementAt() for middle of list 100 times -- 486
+            Middle: call last() 100 times -- 609
+            Slowest: call first() 100 times -- 611
+
+    2.  In the first two sections, Insertion and Removal, the front operations 
+        are always the slowest, the middle ones are moderate speed, and back 
+        are the fastest relative to each other. I believe this is because the 
+        back operations don't need to shift any elements up or down, the middle
+        operation needs to shift only some elements, and the front operations 
+        need to shift all elements up or down. This accounts for why the 
+        front operations take the longest and back operations take the
+        shortest. we dont see this different in the last section access,
+        because no shifting needs to take place and thus the times are much 
+        closer between the operations here than in other sections.
+
+    

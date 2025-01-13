@@ -1,0 +1,77 @@
+Name: Andrew Rozenblit
+utln:        arozen01
+
+Answer the questions below, and submit your answers under the assignment
+"MetroSim Design Checkoff" on Gradescope. You must sign up for a design
+checkoff slot with a TA to discuss your provided answers (see spec for link).
+
+Unless otherwise specified, your answers below should be *brief*: no more
+than three sentences/question.
+
+        
+1. Are you comfortable with reading from stdin (user input) and a text file 
+in C++? Are you comfortable reading different types (e.g. ints and strings)?
+
+Answer: yes. 
+
+2. What happens when I move the train (with 'm m') when the train is at the
+last provided station? 
+
+Answer: It moves back to Station 0. 
+
+3. What classes will you need in your program? What interfaces (i.e. 
+functions) do they each provide? 
+
+Answer: I will need MetroSim class, Passenger Class, and PassengerQueue class. 
+The PassengerQueue class will be the data structure that I wil use to represent
+the Train and it will use the functions front(), dequeue(), 
+enqueue(const Passenger &passenger), size(), and print(std::ostream &output). I
+will use a LinkedList. Then Passenger Class will had 3 private instance 
+variables: ID, starting station, and ending station, and then getter 
+functions that will get all these variables. Finally the MetroSim class will 
+drive the program and it will have the private instance variables: an array 
+with all the stations and an array of all the PassenegerQues and the functions 
+FINISH HERE .  
+
+4. How will you implement add a passenger to a station? How will this 
+impact the data structure(s) you use to represent the stations in the 
+simulation? 
+
+Answer: I will first create a new passenger object and then add it to the 
+proper PassenegerQue list. It will impact the data structure by adding a new 
+passenger to it. 
+
+5. How will you implement moving a train from one station into the next? 
+How will you put passengers onto the train? How will you take off the
+correct passengers who are leaving at the next station? How will these 
+considerations impact the data structure(s) you use to represent the 
+train in the simulation? 
+
+Answer: my MetroSim class will be in a while loop with the condition that it 
+runs until the user inputs m f. With each iteration the train will progress to 
+the next station or return to the first station if at the end. Each 
+PassengerQueue will represent the people getting off at a prticular station 
+so at eahc station I will remove all elements of the PassengerQueue that
+applies to that station.                                                                                                                                                                              
+
+6. Does command behavior change based on the source of commands? 
+Based on your answer, how could we modularize our command processing
+code? Be as detailed as you can.
+
+Answer: The command behavior would be identical regardless if it came from 
+user input or a piped in file. We could modularize it by having the same code 
+run regardless of the input type. 
+
+7. How do you plan to test your program? What evidence of testing do
+you plan to submit? 
+
+Answer: I plan to use unit testing to test my code. I will create individual
+tests to test all attributes of the code I right. I plan to submit those 
+unit tests. Additionally, using my unit tests I will diff check my code 
+against the demo to make sure there are no differences.
+
+8. What is your timeline for completing this project? What would you like 
+to have completed, and by which dates?   
+
+Answer: I want to have this project done before the due date. I plan on 
+spending the next two weekends working on it. 

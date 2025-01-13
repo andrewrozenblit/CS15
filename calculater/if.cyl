@@ -1,0 +1,32 @@
+
+% Basic If 
+5 6 <             
+10 
+20 
+print
+
+% Complex if 
+clear
+4 dup 10 ==
+{ 1 0 / }
+{ 6 + dup 10 < { 10 > } { 10 == } if }
+if
+print
+
+% Not Proper input on stack
+10                 
+10
+10
+if
+
+% Not rpnString on stack
+10 20 <                
+{ 1 2 + }
+10
+if
+
+% Not bool on stack
+20               
+{ 1 2 + }
+{ 10 5 / }
+if

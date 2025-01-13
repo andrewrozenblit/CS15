@@ -1,0 +1,24 @@
+{ 1 3 + }
+exec 
+print 
+print
+{ 12 
+3 
+*
+}
+exec
+print 
+print 
+{ 1 { 4 2 / } / }
+exec
+print 
+print 
+clear
+{ add.cylc }
+exec 
+print 
+clear
+#t
+print
+exec
+quit

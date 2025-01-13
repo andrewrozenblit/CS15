@@ -1,0 +1,105 @@
+Name: Andrew Rozenblit
+utln:  arozen01     
+
+Answer the questions below, and submit your answers under the assignment
+"CalcYouLater Design Checkoff" on Gradescope. You must sign up for a design
+checkoff slot with a TA to discuss your provided answers (see spec for link).
+
+Unless otherwise specified, your answers below should be *brief*: no more
+than three sentences/question.
+
+        
+1. Are you comfortable using try-catch? 
+
+Lets say my program consists of: 
+
+funcA() {
+     throw runtime_error() 
+}
+
+funcB() {
+    workA()
+    funcA()
+    workB()
+}
+
+funcC() {
+    try {
+         funcB()
+    }
+    catch(runtime_error) {
+       workC()
+    }
+}
+
+I call funcC(). Which of the "work" functions will be called, and in what order?
+
+Answer: First workA() will be called then the runtime_error will be thrown, 
+which the catch will catch and workC() will be called.
+
+2. What happens if I try to perform "+" between a string and an integer? Which
+   elements are popped off the stack and remain popped off?
+
+Answer: They will both be popped off, and then error message will be printed 
+to std::cerr, and the two elements will never be readded to the stack. 
+
+3. What does `exec` do? What does `file` do? What does `if` do?
+
+Answer: Exec, assuming that the top most element on the spec is an rstring, 
+processes the rstring as a sequence of commands. If topmost element not an 
+rstring then print error to std::cerr. The file command, assuming that the top
+most element on the stack is an rstring of a file, will open the file and read
+in the commands as if they were inputted into the terminal. The if command, 
+assuming that the order on the stack is top: rstring of false case, rstring of
+true case, and then the boolean condition, will pop of all three, evalutate the 
+boolean and then if true process the true case and if false process the false 
+case. 
+
+4. How will your program interact with the user? What should happen if your
+   program encounters an error during this interaction?
+
+Answer: The program should read in the input of the user and push it onto the 
+stack. If the program encounters an error, depending on the error, it should
+either print a message to std::cerr informing them they are unable to do that 
+task and why, or throw an exception. 
+
+5. What classes will you need in your program? What are the important functions
+   and member variables that those classes will comprise? How will the classes
+   interact (i.e., which classes will be clients of others)?
+   What data structures will you use? It is okay if you use more than three
+   sentences here. Feel free to provide your answer in list form.
+
+Answer: I will need to write three classes. Firstly, I will have the DatumStack
+class, which will represent the stack data structure that the program is 
+contingent on. This class will use two constructor functions (one default and
+one with members already ready to push onto the stack), a clear function to 
+remove all elements from, an isEmpty function to check if the stack is empty,
+a size function that returns the size of the stack, a top function that gives
+the last element of the list, which would be at the top of the stack, a pop 
+function that removes the last element of the list, and finally push that will
+add new Datum to the stack. Then I will write parseRString() which will read
+in the RPN string and make sure it is properly formatted. Finally I will write 
+the RPNCalc class to run the program and complete the functions necessary.
+I will have a function to complete the functions of each of the "small" and 
+"big" tasks. As such, I will have the following functions: #t, #f, not, print,
+clear, drop, swap, an operator function, and boolean operators, as well as,
+exec, file, and if. 
+
+6. There are three sources of input for processing commands: cin, files, and
+   rstrings. What C++ data type can allow you to write the same code that
+   handles commands from all three of these sources?
+
+Answer: I can use std::istream in order to write the same code that handles 
+commnds from all three of those sources.
+
+7. How do you plan to test your program? What evidence of testing do
+   you plan to submit? 
+
+Answer: I plan to unit test the DatumStack class and parseRString. I then 
+plan to write diff tests to test the RPNCalc class, and compare the ouput to 
+the demo.
+
+8. What is your timeline for completing this project? What would you like to
+   have completed, and by which dates?        
+
+Answer: I would like to have this project completed by the deadline.

@@ -1,0 +1,13 @@
+% Basic File Test
+{ add.cylc }
+file
+
+% invalid file name 
+{ adds.cylc }
+file
+
+% file name not on top
+{ adds.cylc }
+4
+file
+quit

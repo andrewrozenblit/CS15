@@ -1,0 +1,61 @@
+Passengers on the train: {}
+TRAIN: [0] Heath St {}
+       [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1]}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1]}
+TRAIN: [1] Back of the Hill {[2, 1->0]}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1]}
+TRAIN: [1] Back of the Hill {[2, 1->0][3, 1->0]}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1]}
+TRAIN: [1] Back of the Hill {[2, 1->0][3, 1->0][4, 1->0]}
+Command? Passengers on the train: {}
+       [0] Heath St {[1, 0->1][5, 0->1]}
+TRAIN: [1] Back of the Hill {[2, 1->0][3, 1->0][4, 1->0]}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {[1, 0->1][5, 0->1]}
+       [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[6, 0->1]}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[6, 0->1]}
+TRAIN: [1] Back of the Hill {[7, 1->0]}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {[6, 0->1]}
+       [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[8, 0->1]}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {[8, 0->1]}
+TRAIN: [1] Back of the Hill {[9, 1->0]}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {[8, 0->1]}
+       [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {}
+       [1] Back of the Hill {}
+Command? Passengers on the train: {}
+       [0] Heath St {}
+TRAIN: [1] Back of the Hill {}
+Command? Passengers on the train: {}
+TRAIN: [0] Heath St {}
+       [1] Back of the Hill {}
+Command? Thanks for playing MetroSim. Have a nice day!

@@ -1,0 +1,50 @@
+5
+4
+2
+#t
+{ 12 { 3 4 + } dup 6 = }
+#f
+{ 1 2 mod }
+{ 12 6 mod }
+{ 12 6 mod }
+if
+exec
+print 
+file
+print
+4
+3
+< 
+if 
+6
+5
+*
+tue
+swap 
+print
+{ fib.cylc }
+file 
+print
+drop
+print
+<=
+10 
+10 
+== 
+6 dup 20
+great
+print
+if 
+{ 20 8765 23453 * + 4 3 - * }
+exec
+print
+7
+8
+< 
+drop
+print 
+dup
+swap
+yeet
+{ 45 32 * 2554 - 0 / }
+print

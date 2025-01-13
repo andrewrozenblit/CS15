@@ -1,0 +1,157 @@
+/**********************************************************
+* Project 2: CalcYouLater
+* CS 15
+* README
+*  Author: Andrew Rozenblit arozen01
+*
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make CalcYouLater
+     - run by 
+            ./CalcYouLater
+
+
+Program Purpose: Create a calculator that processes inputed Datum and adds
+*                them to a a stack and processes commands preformed on the 
+*                stored Datum. Datum stored can be either of type bool, int, or
+*                a an rString storing a series of commands in postfix or a file
+*                to read commands from. 
+
+
+Acknowledgements: Caroline for helping me during the Design Check Off. Calvin
+for helping me with a cerr.eof error. 
+
+Files: 
+
+main.cpp:
+     Main file simple driver function that run the MetroSim simulator.
+
+RPNCalc.cpp:
+    Implementation of RPNCalc class. Main functionality was to process all 
+    commands and run the appropraite helper functions based on input.
+
+RPNCalc.h:
+    interface of the RPNCalc class
+*           An instance of this class creates a calculator where the user is 
+*           able to provide input in the form of Datum (which can be a bool,
+*           int, or rString) and this data will be stored, with the most 
+*           recent at the top and the oldest input at the bottom. Also,
+*           the user is able to input commands that wille be completement on 
+*           the top and potentially second or third elements. These commands 
+*           included arithmetic and boolean calculations, removal or addition
+*           of new elements, manipulation of the placement of elements, and 
+*           execution of a RPN string being stored. It is implemented with the
+*           use of an instance of DatumStack to achieve the First in and First
+*           out effect, where the top most element is the most recent element
+*           inputted. 
+
+parser.h:   
+*           interface of the parser class
+*           reads in an RPN String inputted bt the user  
+
+parser.cpp: 
+*           implementation of parser.h
+*           reads in an RPN String inputted by the user  
+
+DatumStack.h:
+*           Interface of the DatumStack data structure 
+*           The DatumStack class represents a stack storing Datum. It is able
+*           to push new elements to the top, pop top elements off, pop all 
+*           elements off (clear), give the user the size, top elements, and 
+*           a bool whether it is empty. It is represented using a list of 
+*           type Datum.
+
+DatumStack.cpp:
+    *  Implementation of the DatumStack Class 
+
+exec.cyl, if.cyl, fib.cyl, fib_debug, fact.cyl 
+        tester files that test a certain aspect of the code
+
+
+
+Note:  the program should handle all cases.
+
+F. 
+Data Structures:
+
+I used various different data structures in this project.
+
+I used a list in order to create my DatumStack class. The 
+DatumStack classes uses the built in c++ std::list in order to create a 
+stack where Datum are stored and only the top Datum (last inputed Datum) can be 
+accessed, the top Datum maybe removed, and a new Datum may be added to
+the top. I used a list here because the complexity of completuing all necessary
+tasks is the same for both ArrayLists and LinkedLists, so it did not matter,
+which is used, and since I had more experience using LinkedLists from the first
+project I decided to use it again. Another situation where to use a stack would
+be when writing an email inbox. Since newer emails are placed at the top of the
+inbox they can be perfectly represented by a stack. A third situation would be
+when trying to keep track of edits made so that undo and redo buttons work, the
+most recent edits would go at the top and the undo and redo buttons would want
+to access the most recent edits to fix.
+
+Algorithm Overview:
+
+An interesting algorithm was the code that I wrote for the exec function. I 
+feel like it really showed why using a stack was the optimal way to complete
+this project. I also thing pushing each element onto the stack and then 
+processing commands that way is such a smarter way to code this project than 
+simply traversing the RString, which was my first thought to do when I was 
+reading the spec of the project. The stack method was simpler and more elegant
+way to do it. The second algoirthm I found interesting was the file command 
+because I liked how I was able to use the same code that I had prior and just
+simply read in from the file and pass it into the function I was using before.
+This offered a much more modular and efficient solution than I initially 
+thought I would need to write when I was planning my code. 
+
+G. Testing:
+
+DatumStack and Parser
+
+For phase 1 I used unit tests to test my DatumStack and Parser classes. 
+I first confirmed that I would be able to create instances of both the classes. 
+Then I confirmed that the non default constrtor function in the DatumStack
+functions works by attempting to create an instance and passinig in an array
+of Datum. Then, I confirmed that the top function works.I did this by creating 
+an instance with an array of Datum and then called top() and made sure that the
+Datum had the correct data stored. Then I tested isEmpty(), by first creating 
+an empty instance and testing that isEmpty would return true and in another
+test function I created an instance with an array of Datum and made sure 
+isEmpty() return false. I then tested size by creating an instance with an 
+array again and confirming that size() was returning the correct size. Then 
+tested clear by intializing an instance with an array and then calling clear() 
+and calling isEmpty to check that the stack was now empty. Then tested top by 
+firstly creating an instance with an array and then calling top to confirm the 
+last element of the array was being returned, the second way I tested was to 
+try accessing the top of an empty stack and catching the error and confirming 
+that it was being thrown with the correct error message. Then I did the same 
+process for pop() where I tested it with first a regular case to see if it 
+removed the top element, and then having it pop an empty stack to see if the 
+proper error and message was being thrown. Finally tested push() to see if the 
+new element was being added to the top of the stack. I then wrote a couple 
+unit tests for parseRString() and would feed it istringstreams where the 
+rpnStrings were nested and across multiple lines, to confirm the parserString 
+would be able to format it all on one line. 
+
+RPNCalc
+
+I tested RPNCalc by creating various .cyl files that would test various
+functions and then running it on my program and the demo program, then 
+redirecting output and error output, and finally diffing to make sure my code
+produced the same ouput and error messages as the demo. For example, I have a 
+file called if.cyl. Within that file I have multiple tests on the if function. 
+These include a basic if use, a more complex if use, and a couple tests where 
+the stack does not have the proper Datum types on the top to use if. Each
+test also has print statements to make sure that my code is popping off all the
+correct Datum throughout the program. I would then run ./cylc to convert if.cyl
+to if.cylc and then create an if command in my make file that would run the 
+test on my code and the demo, redirecting output to one file and error output
+to another and then diff checking both. I repeated this process for all large 
+functions that I had in my RPNCalc class. 
+
+H.
+
+Time Spent: I spent 5 hours. 
+

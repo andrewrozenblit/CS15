@@ -1,0 +1,91 @@
+/*******************************************************************************
+* LAB 1: unit_test and ArrayList
+* Comp 15 Spring 2021 
+* README
+* Author: Andrew Rozenblit arozen01
+*******************************************************************************/
+
+NOTE: Below is an example of a README that you can use for your future labs and
+assignments. Steal this format! It will save you points later. Read through the
+file and fill in the TODO's.
+
+Program Purpose:
+---------------
+
+   The program creates a useable ArrayList. 
+
+Compile/run:
+-----------
+
+    Compile and Run using the command "unit_test"
+
+
+Acknowledgments:
+---------------
+
+    Jack and Luke are great TAs. Very funny and informative. 
+
+Files:
+-----
+
+ArrayList.h: Interface for a simple ArrayList Class.
+
+ArrayList.cpp: Implementation of a simple ArrayList Class.
+    The default constructor for this class initializes an ArrayList to a size of
+    0, and a capacity of 10. 
+
+unit_tests.h: A unit testing file for the ArrayList Class. 
+    Runs in conjunction with the unit_test framework to allow for testing of 
+    individual functions.
+
+Makefile: File to build the program.
+
+
+Data Structures:
+---------------
+
+    This main data structure of this lab is an ArrayList, which is a dynamically
+    expanding array. If the number of items is ever equal to the capacity, the
+    array will automatically expand, allowing for an arbitrary number of 
+    elements to be inserted into the ArrayList.
+
+
+Testing:
+-------
+
+    I created various functions in the unit_tests.h class that tested attributes of my ArrayList functions to make sure they were working properly. A difficult portion of the lab was figuring out how to use unit_test.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
